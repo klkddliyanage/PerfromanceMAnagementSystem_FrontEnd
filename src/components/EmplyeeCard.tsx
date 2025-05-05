@@ -4,12 +4,12 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 type EmployeeCardProps = {
-  employee: {
-    id: number;
-    fullName: string;
-    department: string;
+  readonly  employee: {
+    readonly  id: number;
+    readonly  fullName: string;
+    readonly  department: string;
   };
-  onSuccess: () => void;
+  readonly  onSuccess: () => void;
 };
 
 

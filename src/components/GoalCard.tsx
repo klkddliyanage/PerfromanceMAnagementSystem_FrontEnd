@@ -7,18 +7,19 @@ type GoalStatus = 'NotStarted' | 'InProgress' | 'Completed' | 'Cancelled';
 
 type GoalCardProps = {
   goal: {
-    readonly  id: number;
-    readonly  goalTitle: string;
-    readonly  description: string;
-    readonly  dueDate: string;
-    readonly  status: GoalStatus;
+    readonly id: number;
+    readonly goalTitle: string;
+    readonly description: string;
+    readonly dueDate: string;
+    readonly status: GoalStatus;
   };
-  readonly  employeeId: number;
-  readonly  onSuccess: () => void; 
-  readonly  goalId: number
+  readonly employeeId: number;
+  readonly onSuccess: () => void; 
+  readonly goalId: number
 };
 
-function GoalCard({ goal, employeeId, onSuccess, goalId }: GoalCardProps) {
+const GoalCard = (props: Readonly<GoalCardProps>) => {
+  const { goal, employeeId, onSuccess, goalId } = props;
 
   const [open, setOpen] = useState(false);
   const getStatusColor = (status: GoalStatus) => {

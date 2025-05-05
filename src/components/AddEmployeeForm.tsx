@@ -21,16 +21,17 @@ const AddEmployeeForm = ({ onSuccess }: AddEmployeeFormProps) => {
       const response = await axios.post('https://localhost:7052/api/employees/employees', {
         fullName: `${firstName} ${lastName}`,
         department: department,
-        performanceGoals: null
+        performanceGoals: null,
       });
-
-      onSuccess();
-      
-  
-      
+    
+      if (response.status === 201 || response.status === 200) {
+        onSuccess();
+      } else {
+        console.warn('Unexpected response status:', response.status);
+      }
+    
     } catch (error) {
       console.error('Error adding employee:', error);
-      
     }
   };
 
