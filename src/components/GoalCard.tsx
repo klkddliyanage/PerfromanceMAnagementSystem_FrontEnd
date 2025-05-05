@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardContent, Typography, Chip, Stack, Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
+import { Card, CardContent, Typography, Chip, Stack, Dialog, DialogTitle, Button } from '@mui/material';
 import axios from 'axios';
 import EditGoalForm from './EditGoalForm';
 
@@ -7,15 +7,15 @@ type GoalStatus = 'NotStarted' | 'InProgress' | 'Completed' | 'Cancelled';
 
 type GoalCardProps = {
   goal: {
-    id: number;
-    goalTitle: string;
-    description: string;
-    dueDate: string;
-    status: GoalStatus;
+    readonly  id: number;
+    readonly  goalTitle: string;
+    readonly  description: string;
+    readonly  dueDate: string;
+    readonly  status: GoalStatus;
   };
-  employeeId: number;
-  onSuccess: () => void; 
-  goalId: number
+  readonly  employeeId: number;
+  readonly  onSuccess: () => void; 
+  readonly  goalId: number
 };
 
 function GoalCard({ goal, employeeId, onSuccess, goalId }: GoalCardProps) {
