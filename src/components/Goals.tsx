@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import GoalCard from './GoalCard';
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Dialog, DialogTitle, Button,  Box, Typography } from '@mui/material';
 import AddGoalForm from './AddGoalForm';
 
@@ -53,7 +52,6 @@ function Goals() {
 
       const handleClick = () => {
         navigate("/");
-        // navigate("/Goals");
       };
 
   return (

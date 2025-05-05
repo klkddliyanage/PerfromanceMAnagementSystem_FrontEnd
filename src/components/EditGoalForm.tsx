@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { Button, TextField, DialogActions, Stack, FormControl,  MenuItem, Select, InputLabel, DialogTitle } from '@mui/material';
+import React, { useState } from 'react'
+import { Button, TextField, DialogActions, Stack, FormControl,  MenuItem, Select, InputLabel } from '@mui/material';
 import axios from 'axios';
 
-type EditGoalFormProps = {
-    employeeId: number;
-     onSuccess: () => void;
-    onClose: () => void;
-    goalId: number;
-  };
+type EditGoalFormProps = Readonly<{
+  employeeId: number;
+  onSuccess: () => void;
+  onClose: () => void;
+  goalId: number;
+}>;
 
 function EditGoalForm({ employeeId, onClose, goalId, onSuccess }: EditGoalFormProps) {
     const [goalTitle, setGoalTitle] = useState('');

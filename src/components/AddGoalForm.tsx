@@ -2,11 +2,11 @@ import React,{ useState } from 'react'
 import { Button, TextField, DialogActions, Stack, FormControl,  MenuItem, Select, InputLabel, DialogTitle } from '@mui/material';
 import axios from 'axios';
 
-type AddGoalFormProps = {
-    employeeId: number;
-    onSuccess: () => void;
-    onClose: () => void;
-  };
+type AddGoalFormProps = Readonly<{
+  employeeId: number;
+  onSuccess: () => void;
+  onClose: () => void;
+}>;
 
 function AddGoalForm({ employeeId, onSuccess, onClose }: AddGoalFormProps) {
     const [goalTitle, setGoalTitle] = useState('');

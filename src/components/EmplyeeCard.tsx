@@ -29,7 +29,6 @@ function EmployeeCard({ employee, onSuccess }: EmployeeCardProps) {
 
       const handleClick = () => {
         navigate("/Goals", { state: { employeeId: employee.id } });
-        // navigate("/Goals");
       };
     
   
